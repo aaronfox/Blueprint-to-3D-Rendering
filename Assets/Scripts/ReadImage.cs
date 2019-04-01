@@ -49,7 +49,8 @@ public class ReadImage : MonoBehaviour
         foreach (Vector3 pos in spawnPositions)
         {
             Color c = pix[counter];
-
+             
+            // First check for certain colors that would signify a certain object
             if(c != white)
             {
                 //Debug.Log("Not white");
