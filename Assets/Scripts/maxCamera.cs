@@ -4,10 +4,11 @@
 // original: http://www.unifycommunity.com/wiki/index.php?title=MouseOrbitZoom
 //
 // --01-18-2010 - create temporary target, if none supplied at start
+// To rotate, drag the mouse while holding the middle mouse button down
+// To zoom in/out, scroll middle wheel
 
 using UnityEngine;
 using System.Collections;
-
 
 [AddComponentMenu("Camera-Control/3dsMax Camera Style")]
 public class maxCamera : MonoBehaviour
@@ -71,8 +72,8 @@ public class maxCamera : MonoBehaviour
         {
             desiredDistance -= Input.GetAxis("Mouse Y") * Time.deltaTime * zoomRate * 0.125f * Mathf.Abs(desiredDistance);
         }
-        // If middle mouse and left alt are selected? ORBIT
-        else if (Input.GetMouseButton(2) && Input.GetKey(KeyCode.LeftAlt))
+        // If middle mouse ~and left alt~ are selected? ORBIT
+        else if (Input.GetMouseButton(2))// && Input.GetKey(KeyCode.LeftAlt))
         {
             xDeg += Input.GetAxis("Mouse X") * xSpeed * 0.02f;
             yDeg -= Input.GetAxis("Mouse Y") * ySpeed * 0.02f;

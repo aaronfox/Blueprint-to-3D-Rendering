@@ -17,7 +17,7 @@ public class ReadImage : MonoBehaviour
     void Start()
     {
         System.DateTime before = System.DateTime.Now;
-        image = images[4];
+        image = images[5];
         Color[] pix = image.GetPixels();
 
         int worldX = image.width;
