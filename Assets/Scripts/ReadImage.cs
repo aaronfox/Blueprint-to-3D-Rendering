@@ -17,7 +17,7 @@ public class ReadImage : MonoBehaviour
     void Start()
     {
         System.DateTime before = System.DateTime.Now;
-        image = images[5];
+        image = images[4];
         Color[] pix = image.GetPixels();
 
         int worldX = image.width;
@@ -46,14 +46,16 @@ public class ReadImage : MonoBehaviour
         //int whitePix = 0;
         //int notWhitePix = 0;
         Color white = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+        //Color black = new Color(0.0f, 0.0f, 0.0f, 0.0f);
         foreach (Vector3 pos in spawnPositions)
         {
             Color c = pix[counter];
-             
+
             // First check for certain colors that would signify a certain object
-            if(c != white)
+            //if (c.r == 0.0f && c.g == 0.0f && c.b == 0.0f)
+            if (c != white)
             {
-                //Debug.Log("Not white");
+                //Debug.Log("Not white! Color is " + c.ToString());
                 Instantiate(wallObject, pos, Quaternion.identity);
                 //notWhitePix++;
             }
