@@ -10,6 +10,7 @@ public class ReadImage : MonoBehaviour
     [SerializeField] private GameObject wallObject;
     [SerializeField] private GameObject groundObject;
     [SerializeField] private GameObject blueObject;
+    [SerializeField] private GameObject fridge;
 
     // For rezising images:
     // https://resizeimage.net/
@@ -55,13 +56,16 @@ public class ReadImage : MonoBehaviour
 
             // First check for certain colors that would signify a certain object
             //if (c.r == 0.0f && c.g == 0.0f && c.b == 0.0f)
-            if (c.b > 225f / 255f)
+            if (c.b > 250f / 255f)
+            {
+                Instantiate(fridge, pos, Quaternion.identity);
+            }
+            if (c.b > 200f / 255f && c.a > .5)
             {
                 Debug.Log("c.b > 200f/255f");
                 Instantiate(blueObject, pos, Quaternion.identity);
             }
-            else
-            if (c.a > .500) // != white)
+            else if (c.a > .500 && c.b < 100f/255f) // != white)
             {
                 Debug.Log("Not white! Color is " + c.ToString() + " at pos " + pos.ToString());
                 Instantiate(wallObject, pos, Quaternion.identity);
