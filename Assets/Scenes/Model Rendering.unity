@@ -149,6 +149,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 1f54c9a4f30fd3c4cb323d6b31e931d5, type: 3}
   - {fileID: 2800000, guid: bcc00110a90bc0d46841a0375654c6e8, type: 3}
   - {fileID: 2800000, guid: deadb81ed61f2ac4a9c916d04521d42c, type: 3}
+  - {fileID: 2800000, guid: 0967b2084cbf96a4c9cffe62f741a001, type: 3}
   wallObject: {fileID: 2476941449301697270, guid: a7750f55c828a6d4d90fdf3ea94d3449,
     type: 3}
   groundObject: {fileID: 2476941449301697270, guid: 9d6f56a106f4b3c419f86da875b9ffc9,
