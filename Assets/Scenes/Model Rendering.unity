@@ -153,6 +153,8 @@ MonoBehaviour:
     type: 3}
   groundObject: {fileID: 2476941449301697270, guid: 9d6f56a106f4b3c419f86da875b9ffc9,
     type: 3}
+  blueObject: {fileID: 2476941449301697270, guid: 0bd98e6402c436447879d2226719742b,
+    type: 3}
 --- !u!4 &144146153
 Transform:
   m_ObjectHideFlags: 0
@@ -249,7 +251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4448068258976056, guid: 2e62f5703e5f8d2488a5e1bc8433be41, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 4448068258976056, guid: 2e62f5703e5f8d2488a5e1bc8433be41, type: 3}
       propertyPath: m_LocalPosition.y
@@ -333,6 +335,10 @@ PrefabInstance:
     - target: {fileID: 1300611964618398, guid: 0584839bceadb844fa31b1ca352056ba, type: 3}
       propertyPath: m_Name
       value: Zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 1300611964618398, guid: 0584839bceadb844fa31b1ca352056ba, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4846736819855508, guid: 0584839bceadb844fa31b1ca352056ba, type: 3}
       propertyPath: m_LocalPosition.x

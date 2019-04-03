@@ -9,6 +9,7 @@ public class ReadImage : MonoBehaviour
 
     [SerializeField] private GameObject wallObject;
     [SerializeField] private GameObject groundObject;
+    [SerializeField] private GameObject blueObject;
 
     // For rezising images:
     // https://resizeimage.net/
@@ -17,7 +18,7 @@ public class ReadImage : MonoBehaviour
     void Start()
     {
         System.DateTime before = System.DateTime.Now;
-        image = images[4];
+        image = images[6];
         Color[] pix = image.GetPixels();
 
         int worldX = image.width;
@@ -45,6 +46,7 @@ public class ReadImage : MonoBehaviour
         counter = 0;
         //int whitePix = 0;
         //int notWhitePix = 0;
+        // NOTE: removing the last 0.0f in Color in the following line will make Unity break???
         Color white = new Color(0.0f, 0.0f, 0.0f, 0.0f);
         //Color black = new Color(0.0f, 0.0f, 0.0f, 0.0f);
         foreach (Vector3 pos in spawnPositions)
@@ -53,9 +55,15 @@ public class ReadImage : MonoBehaviour
 
             // First check for certain colors that would signify a certain object
             //if (c.r == 0.0f && c.g == 0.0f && c.b == 0.0f)
-            if (c != white)
+            if (c.b > 225f / 255f)
             {
-                //Debug.Log("Not white! Color is " + c.ToString());
+                Debug.Log("c.b > 200f/255f");
+                Instantiate(blueObject, pos, Quaternion.identity);
+            }
+            else
+            if (c.a > .500) // != white)
+            {
+                Debug.Log("Not white! Color is " + c.ToString() + " at pos " + pos.ToString());
                 Instantiate(wallObject, pos, Quaternion.identity);
                 //notWhitePix++;
             }

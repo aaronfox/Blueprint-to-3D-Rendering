@@ -11,6 +11,7 @@ public class Zombie : MonoBehaviour
     [SerializeField] public float speed;
     private bool shouldWalk;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +30,7 @@ public class Zombie : MonoBehaviour
         {
             shouldWalk = false;
         }
-        Debug.Log("Distance from zombie to player is " + Vector3.Distance(zombie.transform.position, player.transform.position));
+        //Debug.Log("Distance from zombie to player is " + Vector3.Distance(zombie.transform.position, player.transform.position));
 
         if(shouldWalk)
         {
@@ -52,8 +53,8 @@ public class Zombie : MonoBehaviour
         float step = speed * Time.deltaTime;
         zombie.transform.position = Vector3.MoveTowards(zombie.transform.position, player.transform.position, step);
 
-        Vector3 newDir = Vector3.RotateTowards(transform.forward, player.transform.position, step, 0.0f);
-        //Debug.DrawRay(transform.position, newDir, Color.red);
+        Vector3 newDir = Vector3.RotateTowards(transform.forward, player.transform.position, step * 100f, 0.0f);
+        Debug.DrawRay(transform.position, newDir, Color.red);
 
         // Move our position a step closer to the target.
         transform.rotation = Quaternion.LookRotation(newDir);
