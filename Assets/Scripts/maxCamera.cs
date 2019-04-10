@@ -24,7 +24,7 @@ public class maxCamera : MonoBehaviour
     public int yMinLimit = -80;
     public int yMaxLimit = 80;
     public int zoomRate = 40;
-    public float panSpeed = 0.3f;
+    public float panSpeed = 30.0f;
     public float zoomDampening = 5.0f;
 
     private float xDeg = 0.0f;
