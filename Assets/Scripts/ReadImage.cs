@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ReadImage : MonoBehaviour
 {
+    [SerializeField] private int imageToRender = 6;
     [SerializeField] private Texture2D[] images;
     private Texture2D image;
 
@@ -19,7 +20,7 @@ public class ReadImage : MonoBehaviour
     void Start()
     {
         System.DateTime before = System.DateTime.Now;
-        image = images[6];
+        image = images[imageToRender];
         Color[] pix = image.GetPixels();
 
         int worldX = image.width;
